@@ -127,11 +127,7 @@ p {
   }
 
   &__container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 3;
+
   }
 
   &__navbar {
@@ -175,14 +171,7 @@ p {
     display: flex;
     gap: 1rem;
 
-    @media screen and (max-width:media.$header-mobile) {
-      position: absolute;
-      top: 10rem;
-    }
 
-    @media screen and (min-width:media.$header-mobile) {
-      position: static;
-    }
 
 
   }
