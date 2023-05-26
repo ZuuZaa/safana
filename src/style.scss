@@ -80,6 +80,7 @@ p {
 
 .header {
   position: relative;
+
   @media screen and (min-width:media.$header-mobile) {
 
     &:is(.onscroll) {
@@ -87,6 +88,7 @@ p {
       .sosial-links {
         display: none;
       }
+
       .nav-collapse {
         flex-direction: row;
       }
@@ -122,12 +124,14 @@ p {
     left: 0;
     right: 0;
     width: 100%;
-    z-index: 5;
+    z-index: 15;
     transition: all .5s;
     color: transparent;
+
     .onscroll & {
       background-color: colors.$white;
     }
+
     @media screen and (max-width:media.$header-mobile) {
       background-color: colors.$white;
     }
@@ -136,25 +140,25 @@ p {
   &__container {
     width: 90%;
     margin-inline: auto;
-     display: flex;
-     padding-block: 0.8rem;
-     justify-content: space-between;
-     align-items: center;
+    display: flex;
+    padding-block: 0.8rem;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .nav-collapse-layout {
 
-display: flex;
-
+    display: flex;
 
     @media screen and (max-width:media.$header-mobile) {
       position: absolute;
-      height: calc( 100vh - 9.6rem );
+      height: calc(100vh - 9.6rem);
       background-color: colors.$cover;
       top: 9.6rem;
       right: 0;
       left: 0;
-      z-index: -1;
+      z-index: 15;
+      justify-content: flex-end;
       align-items: flex-start;
     }
 
@@ -171,6 +175,26 @@ display: flex;
     display: flex;
     flex-direction: column;
     gap: .8rem;
+    height: 100%;
+    @media screen and (max-width:media.$header-mobile) {
+      background: colors.$white;
+      width: 60%;
+    }
+
+    @media screen and (min-width:media.$header-mobile) {
+      background: transparent;
+    }
+  }
+
+  .nav-links-list {
+    display: flex;
+    @media screen and (max-width:media.$header-mobile) {
+      flex-direction: column;
+    }
+
+    @media screen and (min-width:media.$header-mobile) {
+      flex-direction: row;
+    }
   }
 
   &__logo-wrapper {
@@ -238,6 +262,14 @@ display: flex;
         color: color.adjust(colors.$white, $lightness: -20, $alpha: 0.8);
       }
     }
+    @media screen and (max-width:media.$header-mobile) {
+      display: none;
+    }
+
+    @media screen and (min-width:media.$header-mobile) {
+      display: flex;
+    }
+    
   }
 
   &__nav-link {
@@ -245,6 +277,14 @@ display: flex;
     @extend %nav-link;
     position: relative;
     margin-inline: 0.54em;
+
+    @media screen and (max-width:media.$header-mobile) {
+      color: colors.$black;
+    }
+
+    @media screen and (min-width:media.$header-mobile) {
+      color: colors.$white;
+    }
 
     &:not(:nth-child(2))::after {
       content: "";
