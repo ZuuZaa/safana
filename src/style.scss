@@ -92,6 +92,14 @@ body:has(.collapsed-nav) {
         background-color: colors.$white;
       }
 
+      .menu-btn {
+        transition: opacity 0.5s;
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+
       .menu-btn>.bar {
         background: colors.$black;
       }
@@ -136,6 +144,10 @@ body:has(.collapsed-nav) {
           &::after {
             display: none;
           }
+
+          &:hover {
+            opacity: 0.7;
+          }
         }
       }
 
@@ -155,9 +167,9 @@ body:has(.collapsed-nav) {
 
 
       .languages {
-        
+
         justify-content: center;
-    
+
         &__container {
           position: static;
           overflow-x: visible;
@@ -165,19 +177,38 @@ body:has(.collapsed-nav) {
           display: flex;
           justify-content: center;
           gap: 1.4rem;
+
           &:hover {
             animation: none;
           }
         }
+
         &__link--active {
           position: static;
         }
-    
+
         &__link,
         &__link--active {
           transition: transform 0.5s;
+
           &:hover {
-           transform: scale(1.1);
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+
+    &:not(.collapsed-nav) {
+      .menu-btn:hover {
+        .bar {
+          transition: transition 0.5s;
+
+          &:first-child {
+            transform: translateX(-60%);
+          }
+
+          &:nth-child(2) {
+            transform: translateX(-30%);
           }
         }
       }
@@ -458,6 +489,7 @@ body:has(.collapsed-nav) {
       align-items: flex-end;
       width: 3.6rem;
       height: 2.8rem;
+
     }
 
     .bar {
@@ -465,7 +497,7 @@ body:has(.collapsed-nav) {
       width: 100%;
       height: 0.2rem;
       opacity: 1;
-      transition: all 0.3s;
+      transition: all 0.5s;
 
       &:last-child {
         width: 70%;
