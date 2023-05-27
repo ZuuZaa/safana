@@ -42,6 +42,7 @@
 }
 
 
+
 %nav-link {
   font-size: 1.4rem;
   height: 4.8rem;
@@ -52,13 +53,15 @@
   cursor: pointer;
 }
 
-
-p {
-  font-size: 1.4rem;
+body:has(.collapsed-nav) {
+  overflow-y: hidden
 }
+
 
 .btn--primary {
   @extend %nav-link;
+  display: flex;
+  justify-content: center;
   min-width: 12em;
   border-radius: 4rem;
   padding: .67em 1.34em;
@@ -84,6 +87,15 @@ p {
   @media screen and (max-width:media.$header-mobile) {
 
     &:is(.collapsed-nav) {
+
+      .header__navbar {
+        background-color: colors.$white;
+      }
+
+      .menu-btn>.bar {
+        background: colors.$black;
+      }
+
       .menu-btn>.bar:first-child {
         position: relative;
         transform: rotate(45deg);
@@ -99,6 +111,75 @@ p {
         width: 100%;
         transform: rotate(-45deg);
         top: -41%;
+      }
+
+      .nav-collapse-layout {
+        visibility: visible;
+      }
+
+      .nav-collapse {
+        transform: translateX(0);
+        padding: 3.5rem;
+
+        @media screen and (max-width:media.$mobile) {
+          width: 80%;
+        }
+
+        @media screen and (min-width:media.$mobile) {
+          width: 50%;
+        }
+
+        .header__nav-link {
+          color: colors.$black;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+
+          &::after {
+            display: none;
+          }
+        }
+      }
+
+      .nav-links-list {
+        width: 100%;
+      }
+
+      .btn--primary {
+        margin: 1em 0;
+
+      }
+
+      .sosial-links__link {
+        color: colors.$black;
+        opacity: 0.6;
+      }
+
+
+      .languages {
+        
+        justify-content: center;
+    
+        &__container {
+          position: static;
+          overflow-x: visible;
+          animation: none;
+          display: flex;
+          justify-content: center;
+          gap: 1.4rem;
+          &:hover {
+            animation: none;
+          }
+        }
+        &__link--active {
+          position: static;
+        }
+    
+        &__link,
+        &__link--active {
+          transition: transform 0.5s;
+          &:hover {
+           transform: scale(1.1);
+          }
+        }
       }
     }
   }
@@ -170,11 +251,11 @@ p {
     justify-content: space-between;
     align-items: center;
 
-    @media (min-width: 576px) and (max-width: 768px) {
+    @media (min-width: media.$mobile) and (max-width: media.$tablet) {
       width: 54rem;
     }
 
-    @media (min-width: 768px) and (max-width:media.$header-mobile) {
+    @media (min-width: media.$tablet) and (max-width:media.$header-mobile) {
       width: 72rem;
     }
   }
@@ -190,9 +271,10 @@ p {
       top: 9.6rem;
       right: 0;
       left: 0;
-      z-index: 15;
+      visibility: hidden;
       justify-content: flex-end;
       align-items: flex-start;
+      transition: visibility 0.3s;
     }
 
     @media screen and (min-width:media.$header-mobile) {
@@ -200,8 +282,6 @@ p {
       background-color: transparent;
       height: 100%;
     }
-
-
   }
 
   .nav-collapse {
@@ -209,11 +289,11 @@ p {
     flex-direction: column;
     gap: .8rem;
     height: 100%;
+    transition: transform 0.5s;
 
     @media screen and (max-width:media.$header-mobile) {
       background: colors.$white;
-      width: 60%;
-      transform: translateX(90%);
+      transform: translateX(100%);
     }
 
     @media screen and (min-width:media.$header-mobile) {
@@ -241,6 +321,23 @@ p {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+  }
+
+  .nav-extra {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    @media screen and (max-width:media.$header-mobile) {
+      flex-direction: column-reverse;
+      margin-bottom: 1em;
+    }
+
+    @media screen and (min-width:media.$header-mobile) {
+      flex-direction: row;
+      justify-content: flex-end;
+      margin-bottom: 0;
     }
   }
 
@@ -361,8 +458,6 @@ p {
       align-items: flex-end;
       width: 3.6rem;
       height: 2.8rem;
-
-
     }
 
     .bar {
