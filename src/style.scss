@@ -53,30 +53,46 @@
   cursor: pointer;
 }
 
+%btn {
+  @extend %nav-link;
+  justify-content: center;
+  padding: .67em 1.34em;
+  border-radius: 4rem;
+  width: 21rem;
+  transition: background-color .4s;
+  a {
+    color: colors.$white;
+  }
+}
+
 body:has(.collapsed-nav) {
   overflow-y: hidden
 }
 
+section:not(.banner) {
+  padding-block: 4rem;
+}
+
+.bg-gray {
+  background-color: colors.$bg-gray;
+}
 
 .btn--primary {
-  @extend %nav-link;
-  display: flex;
-  justify-content: center;
-  padding: .67em 1.34em;
-  width: 21rem;
-  border-radius: 4rem;
-  color: colors.$white;
+  @extend %btn;
   background-color: colors.$bg-primary;
-  transition: background-color .4s;
 
   &:hover {
     background-color: color.adjust(colors.$bg-primary, $lightness: 10);
-
-    a {
-      color: colors.$white;
-    }
   }
+}
 
+.btn--secondary {
+  @extend %btn;
+  background-color: colors.$bg-secondary;
+
+  &:hover {
+    background-color: color.adjust(colors.$bg-secondary, $lightness: 10);
+  }
 }
 
 /* -------------------------------------------
@@ -628,12 +644,6 @@ body:has(.collapsed-nav) {
     justify-content: center;
     margin-inline: auto;
     width: 90%;
-    @media (min-width: media.$mobile) and (max-width: media.$tablet) {
-      width: 54rem;
-    }
-    @media (min-width: media.$tablet) and (max-width:media.$header-mobile) {
-      width: 72rem;
-    }
   }
 
   &__list {
@@ -641,10 +651,8 @@ body:has(.collapsed-nav) {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-block: 4rem;
 
     &::before {
-
       content: "";
       position: absolute;
       top: (13.4rem / 2);
@@ -652,27 +660,24 @@ body:has(.collapsed-nav) {
       width: 80%;
       height: 2px;
       background-color: colors.$line;
-      @media screen and (max-width: media.$tablet) {
+
+      @media screen and (max-width: media.$large) {
         display: none;
-       }
-       @media screen and (min-width: media.$tablet) {
-         display: block;
-       }
+      }
+
+      @media screen and (min-width: media.$large) {
+        display: block;
+      }
     }
   }
 
   &__item {
-    flex-basis: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
-
-
   }
 
-  &__item-icon 
-  
-  figcaption{
+  &__item-icon {
     display: flex;
     justify-content: center;
     align-items: center;
