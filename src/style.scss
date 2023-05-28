@@ -44,11 +44,11 @@
 
 
 %nav-link {
-  font-size: 1.4rem;
-  height: 4.8rem;
   display: flex;
   align-items: center;
   text-transform: uppercase;
+  font-size: 1.4rem;
+  height: 4.8rem;
   color: colors.$white;
   cursor: pointer;
 }
@@ -62,14 +62,12 @@ body:has(.collapsed-nav) {
   @extend %nav-link;
   display: flex;
   justify-content: center;
-  min-width: 12em;
-  border-radius: 4rem;
   padding: .67em 1.34em;
-  margin-left: 2em;
-  background-color: colors.$bg-primary;
+  width: 21rem;
+  border-radius: 4rem;
   color: colors.$white;
+  background-color: colors.$bg-primary;
   transition: background-color .4s;
-
 
   &:hover {
     background-color: color.adjust(colors.$bg-primary, $lightness: 10);
@@ -80,6 +78,10 @@ body:has(.collapsed-nav) {
   }
 
 }
+
+/* -------------------------------------------
+              # HEADER 
+ -------------------------------------------- */
 
 .header {
   position: relative;
@@ -106,8 +108,9 @@ body:has(.collapsed-nav) {
 
       .menu-btn>.bar:first-child {
         position: relative;
-        transform: rotate(45deg);
         top: 50%;
+        transform: rotate(45deg);
+
       }
 
       .menu-btn>.bar:nth-child(2) {
@@ -116,9 +119,9 @@ body:has(.collapsed-nav) {
 
       .menu-btn>.bar:last-child {
         position: relative;
+        top: -41%;
         width: 100%;
         transform: rotate(-45deg);
-        top: -41%;
       }
 
       .nav-collapse-layout {
@@ -126,8 +129,8 @@ body:has(.collapsed-nav) {
       }
 
       .nav-collapse {
-        transform: translateX(0);
         padding: 3.5rem;
+        transform: translateX(0);
 
         @media screen and (max-width:media.$mobile) {
           width: 80%;
@@ -138,8 +141,8 @@ body:has(.collapsed-nav) {
         }
 
         .header__nav-link {
-          color: colors.$black;
           border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+          color: colors.$black;
 
           &::after {
             display: none;
@@ -156,8 +159,8 @@ body:has(.collapsed-nav) {
       }
 
       .btn--primary {
-        margin: 1em 0;
-
+        margin-block: 2em;
+        width: 100%;
       }
 
       .sosial-links__link {
@@ -172,11 +175,11 @@ body:has(.collapsed-nav) {
 
         &__container {
           position: static;
-          overflow-x: visible;
-          animation: none;
           display: flex;
           justify-content: center;
           gap: 1.4rem;
+          overflow-x: visible;
+          animation: none;
 
           &:hover {
             animation: none;
@@ -197,25 +200,14 @@ body:has(.collapsed-nav) {
         }
       }
     }
-
-    &:not(.collapsed-nav) {
-      .menu-btn:hover {
-        .bar {
-          transition: transition 0.5s;
-
-          &:first-child {
-            transform: translateX(-60%);
-          }
-
-          &:nth-child(2) {
-            transform: translateX(-30%);
-          }
-        }
-      }
-    }
   }
 
+  @media screen and (min-width:media.$header-mobile) {
 
+    .btn--primary {
+      margin-left: 2em;
+    }
+  }
 
   &:is(.onscroll) {
 
@@ -262,12 +254,12 @@ body:has(.collapsed-nav) {
   &__navbar {
     position: fixed;
     top: 0;
-    left: 0;
     right: 0;
-    width: 100%;
+    left: 0;
     z-index: 15;
-    transition: all .5s;
+    width: 100%;
     color: transparent;
+    transition: all .5s;
 
     .onscroll & {
       background-color: colors.$white;
@@ -275,12 +267,13 @@ body:has(.collapsed-nav) {
   }
 
   &__container {
-    width: 90%;
-    margin-inline: auto;
+
     display: flex;
-    padding-block: 0.8rem;
     justify-content: space-between;
     align-items: center;
+    margin-inline: auto;
+    padding-block: 0.8rem;
+    width: 90%;
 
     @media (min-width: media.$mobile) and (max-width: media.$tablet) {
       width: 54rem;
@@ -297,21 +290,21 @@ body:has(.collapsed-nav) {
 
     @media screen and (max-width:media.$header-mobile) {
       position: absolute;
-      height: 100vh;
-      background-color: colors.$cover;
       top: 9.6rem;
       right: 0;
       left: 0;
-      visibility: hidden;
       justify-content: flex-end;
       align-items: flex-start;
+      height: 100vh;
+      visibility: hidden;
+      background-color: colors.$cover;
       transition: visibility 0.3s;
     }
 
     @media screen and (min-width:media.$header-mobile) {
       position: static;
-      background-color: transparent;
       height: 100%;
+      background-color: transparent;
     }
   }
 
@@ -380,18 +373,19 @@ body:has(.collapsed-nav) {
 
     &__container {
       position: relative;
-      border-radius: 5rem;
-      transition: width 1s;
-      overflow-x: hidden;
-      background: colors.$white;
-      animation: languagesMouseLeave 0.8s;
       width: 3rem;
       height: 3rem;
+      border-radius: 5rem;
+      overflow-x: hidden;
+      background: colors.$white;
+      transition: width 1s;
+      animation: languagesMouseLeave 0.8s;
+
 
       &:hover {
-        width: 9rem;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        width: 9rem;
         animation: languagesMouseOver 0.8s;
       }
     }
@@ -400,8 +394,8 @@ body:has(.collapsed-nav) {
       position: absolute;
       top: 0;
       right: 0;
-      order: 1;
       z-index: 1;
+      order: 1;
     }
 
     &__link,
@@ -415,10 +409,10 @@ body:has(.collapsed-nav) {
     font-size: 2.2rem;
 
     &__link {
-      padding: .45em;
-      height: 3.92rem;
       display: flex;
       align-items: center;
+      padding: .45em;
+      height: 3.92rem;
       color: colors.$white;
       transition: color 0.8s;
 
@@ -454,10 +448,10 @@ body:has(.collapsed-nav) {
     &:not(:nth-child(2))::after {
       content: "";
       position: absolute;
-      margin-inline: auto;
-      display: block;
       right: 50%;
       bottom: 0;
+      display: block;
+      margin-inline: auto;
       width: 0;
       height: 2px;
       background: colors.$safana;
@@ -467,8 +461,8 @@ body:has(.collapsed-nav) {
 
     &:hover {
       &::after {
-        width: 100%;
         right: 0;
+        width: 100%;
         animation: navLinkHover 0.3s;
       }
     }
@@ -489,7 +483,6 @@ body:has(.collapsed-nav) {
       align-items: flex-end;
       width: 3.6rem;
       height: 2.8rem;
-
     }
 
     .bar {
@@ -515,6 +508,9 @@ body:has(.collapsed-nav) {
 
 }
 
+/* -------------------------------------------
+              # BANNER SECTION 
+ -------------------------------------------- */
 
 .banner {
 
@@ -523,25 +519,177 @@ body:has(.collapsed-nav) {
 
     &::after {
       content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
       width: 100%;
       height: 100%;
       background: colors.$cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 1;
     }
   }
 
   .carousel-item {
-    height: 100vh;
+
+    @media screen and (max-width:media.$tablet) {
+      height: 50vh;
+    }
+
+    @media screen and (min-width:media.$tablet) {
+      height: 100vh;
+    }
+
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+  }
+
+  .carousel-caption {
+    top: 50%;
+    left: 16%;
+    text-align: initial;
+    transform: translateY(-20%);
+
+
+    h1 {
+
+      margin-bottom: 0.4em;
+
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+
+      @media screen and (max-width:media.$tablet) {
+        max-width: 36rem;
+        font-size: 3.2rem;
+      }
+
+      @media screen and (min-width:media.$tablet) {
+        max-width: 60rem;
+        font-size: 6rem;
+      }
+    }
+
+    h3 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+    }
+  }
+
+  .carousel-control-prev-icon {
+    background-image: url('/img/prev.svg');
+  }
+
+  .carousel-control-next-icon {
+    background-image: url('/img/next.svg');
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .carousel-indicators {
+    justify-content: flex-start;
+    margin-bottom: 1.6rem;
+
+    li {
+      width: .7rem;
+      height: .7rem;
+      margin-inline: 0.6rem;
+      border-radius: 50%;
+
+      &:is(.active) {
+        position: relative;
+        top: -0.3rem;
+      }
+    }
+  }
+}
+
+/* -------------------------------------------
+              # ADVANTAGES 
+ -------------------------------------------- */
+
+
+.advantages {
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    margin-inline: auto;
+    width: 90%;
+    @media (min-width: media.$mobile) and (max-width: media.$tablet) {
+      width: 54rem;
+    }
+    @media (min-width: media.$tablet) and (max-width:media.$header-mobile) {
+      width: 72rem;
+    }
+  }
+
+  &__list {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-block: 4rem;
+
+    &::before {
+
+      content: "";
+      position: absolute;
+      top: (13.4rem / 2);
+      z-index: -1;
+      width: 80%;
+      height: 2px;
+      background-color: colors.$line;
+      @media screen and (max-width: media.$tablet) {
+        display: none;
+       }
+       @media screen and (min-width: media.$tablet) {
+         display: block;
+       }
+    }
+  }
+
+  &__item {
+    flex-basis: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+  }
+
+  &__item-icon 
+  
+  figcaption{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 13.4rem;
+    height: 13.4rem;
+    background-image: url("/img/adv-bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__item-text {
+    width: 17.2rem;
+    padding-inline: 0.67em;
+    margin-top: 1em;
+    font-size: 1.5rem;
+    text-align: center;
   }
 }
