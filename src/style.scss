@@ -60,6 +60,7 @@
   border-radius: 4rem;
   width: 21rem;
   transition: background-color .4s;
+
   a {
     color: colors.$white;
   }
@@ -149,7 +150,7 @@ section:not(.banner) {
         transform: translateX(0);
 
         @media screen and (max-width:media.$mobile) {
-          width: 80%;
+          width: 70%;
         }
 
         @media screen and (min-width:media.$mobile) {
@@ -524,6 +525,9 @@ section:not(.banner) {
 
 }
 
+
+/* -------- end of header ------ */
+
 /* -------------------------------------------
               # BANNER SECTION 
  -------------------------------------------- */
@@ -557,7 +561,6 @@ section:not(.banner) {
       height: 100vh;
     }
 
-
     img {
       width: 100%;
       height: 100%;
@@ -569,16 +572,16 @@ section:not(.banner) {
     top: 50%;
     left: 16%;
     text-align: initial;
-    transform: translateY(-20%);
 
+    @media screen and (max-width:media.$tablet) {
+      transform: translateY(-30%);
+    }
+
+    @media screen and (min-width:media.$tablet) {
+      transform: translateY(-20%);
+    }
 
     h1 {
-
-      margin-bottom: 0.4em;
-
-      font-weight: 500;
-      line-height: 1.2;
-      letter-spacing: 1.2px;
       text-transform: uppercase;
 
       @media screen and (max-width:media.$tablet) {
@@ -593,11 +596,7 @@ section:not(.banner) {
     }
 
     h3 {
-      font-size: 2.4rem;
-      font-weight: 500;
-      letter-spacing: 1px;
       text-transform: uppercase;
-
     }
   }
 
@@ -632,6 +631,8 @@ section:not(.banner) {
     }
   }
 }
+
+/* -------- end of banner ------ */
 
 /* -------------------------------------------
               # ADVANTAGES 
@@ -697,3 +698,143 @@ section:not(.banner) {
     text-align: center;
   }
 }
+
+/* -------- end of advantages ------ */
+
+/* -------------------------------------------
+              # ABOUT 
+ -------------------------------------------- */
+
+.about {
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__container {
+    background-color: colors.$bg-primary;
+  }
+
+  &__left {
+    padding: 4rem 4.8rem;
+    text-align: center;
+    color: colors.$light;
+    @media screen and (min-width:media.$about-mobile) {
+      text-align: start;
+    }
+
+    p {
+      margin-bottom: 1.6em;
+      font-size: 1.9rem;
+      line-height: 1.5;
+      @media screen and (min-width:media.$about-mobile) {
+        margin-bottom: 2.5em;
+      }
+    }
+  }
+
+  &__right {
+    align-self: stretch;
+    padding-block: 0 4rem;
+    @media screen and (min-width:media.$about-mobile) and (max-width:media.$about-desktop) {
+    padding-block: 4rem;
+    }
+    @media screen and (min-width:media.$about-desktop) {
+      padding-block: 0;
+    }
+  }
+
+  &__content {
+    position: static;
+    display: flex;
+    font-size: 1.8rem;
+    background-color: colors.$white;
+
+    @media screen and (min-width:media.$about-desktop) {
+      position: relative;
+      top: -4rem;
+      height: 17.2rem;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: -4rem;
+        left: 0;
+        height: calc(100% + 4rem);
+        width: 150%;
+        background-color: colors.$white;
+        z-index: 1;
+      }
+    }
+  }
+
+  .description p {
+    position: static;
+    padding: 1.8em 2.2em;
+    @media screen and (min-width:media.$about-desktop) {
+      position: absolute;
+      z-index: 3;
+    }
+  }
+
+  .arrows {
+    display: none;
+    @media screen and (min-width:media.$about-desktop) {
+      position: relative;
+      left: 0;
+      height: 100%;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      padding-inline: 1rem;
+    }
+  }
+
+  .btn--light {
+    display: inline-block;
+    min-width: 19rem;
+    padding: 18px 10px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    color: colors.$black;
+    background-color: colors.$white;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: translateY(-10%);
+    }
+  }
+
+  .img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    @media screen and (min-width:media.$about-desktop) {
+      top: -4rem;
+      right: 0;
+      left: 5rem;
+      z-index: 3;
+      width: 49rem;
+    }
+  }
+
+  .icon-wrapper {
+    height: 2.5rem;
+    width: 2.5rem;
+
+    img {
+      transform: rotate(90deg);
+    }
+
+  }
+}
+
+/* -------- end of about ------ */
