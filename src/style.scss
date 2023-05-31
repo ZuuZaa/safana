@@ -56,10 +56,10 @@
 %btn {
   @extend %nav-link;
   justify-content: center;
-  padding: .67em 1.34em;
+  padding: .57em 1.4em;
   border-radius: 4rem;
   width: 21rem;
-  transition: background-color .4s;
+  transition: all .4s;
 
   a {
     color: colors.$white;
@@ -87,12 +87,38 @@ section:not(.banner) {
   }
 }
 
+.btn--outlined {
+  @extend %nav-link;
+  text-transform: none;
+  background-color: colors.$bg-primary;
+  padding: .67em 1.34em;
+  border-radius: 4rem;
+  transition: background-color .4s;
+
+}
+
 .btn--secondary {
   @extend %btn;
   background-color: colors.$bg-secondary;
 
   &:hover {
     background-color: color.adjust(colors.$bg-secondary, $lightness: 10);
+  }
+}
+
+img {
+
+  .header__logo-wrapper &,
+  .about &,
+  .carousel-item &,
+  .products & {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .products & {
+    transition: transform .4s;
   }
 }
 
@@ -357,12 +383,6 @@ section:not(.banner) {
   &__logo-wrapper {
     width: 24rem;
     height: 8rem;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
   }
 
   .nav-extra {
@@ -525,7 +545,6 @@ section:not(.banner) {
 
 }
 
-
 /* -------- end of header ------ */
 
 /* -------------------------------------------
@@ -559,12 +578,6 @@ section:not(.banner) {
 
     @media screen and (min-width:media.$tablet) {
       height: 100vh;
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
     }
   }
 
@@ -707,12 +720,6 @@ section:not(.banner) {
 
 .about {
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
   &__container {
     background-color: colors.$bg-primary;
   }
@@ -721,6 +728,7 @@ section:not(.banner) {
     padding: 4rem 4.8rem;
     text-align: center;
     color: colors.$light;
+
     @media screen and (min-width:media.$about-mobile) {
       text-align: start;
     }
@@ -729,6 +737,7 @@ section:not(.banner) {
       margin-bottom: 1.6em;
       font-size: 1.9rem;
       line-height: 1.5;
+
       @media screen and (min-width:media.$about-mobile) {
         margin-bottom: 2.5em;
       }
@@ -738,9 +747,11 @@ section:not(.banner) {
   &__right {
     align-self: stretch;
     padding-block: 0 4rem;
+
     @media screen and (min-width:media.$about-mobile) and (max-width:media.$about-desktop) {
-    padding-block: 4rem;
+      padding-block: 4rem;
     }
+
     @media screen and (min-width:media.$about-desktop) {
       padding-block: 0;
     }
@@ -756,6 +767,7 @@ section:not(.banner) {
       position: relative;
       top: -4rem;
       height: 17.2rem;
+
       &::after {
         content: "";
         position: absolute;
@@ -774,6 +786,7 @@ section:not(.banner) {
   .description p {
     position: static;
     padding: 1.8em 2.2em;
+
     @media screen and (min-width:media.$about-desktop) {
       position: absolute;
       z-index: 3;
@@ -782,6 +795,7 @@ section:not(.banner) {
 
   .arrows {
     display: none;
+
     @media screen and (min-width:media.$about-desktop) {
       position: relative;
       left: 0;
@@ -838,3 +852,155 @@ section:not(.banner) {
 }
 
 /* -------- end of about ------ */
+
+/* -------------------------------------------
+              # PRODUCTS 
+ -------------------------------------------- */
+
+.products {
+  &__gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 15.4rem auto 15.4rem auto;
+    gap: 2rem;
+    padding-block: 4.8rem;
+
+    @media screen and (min-width:media.$about-mobile) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(6, 6.7rem);
+    }
+
+  }
+
+  .products__card {
+    background-color: colors.$bg-gray;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: .5rem;
+    padding: 1.6rem 2.5rem;
+    cursor: pointer;
+    transition: all .4s;
+
+    h3 {
+      margin-bottom: 1em;
+      transition: letter-spacing .4s;
+    }
+
+    .img-wrapper {
+      position: absolute;
+      right: 10%;
+      bottom: 10%;
+    }
+
+    &:first-child {
+      grid-row: 1 / span 1;
+      grid-column: 1 / span 1;
+    }
+
+    &:nth-child(2) {
+      grid-row: 1 / span 1;
+      grid-column: 2 / span 1;
+    }
+
+    &:nth-child(3) {
+      grid-row: 2 / span 2;
+      grid-column: 1 / span 2;
+    }
+
+    &:nth-child(4) {
+      grid-row: 4 / span 1;
+      grid-column: 1 / span 1;
+    }
+
+    &:nth-child(5) {
+      grid-row: 4 / span 1;
+      grid-column: 2 / span 1;
+    }
+
+    &:last-child {
+      grid-row: 5 /span 2;
+      grid-column: 1 / span 2;
+    }
+
+
+    @media screen and (min-width:media.$about-mobile) {
+
+      &:first-child {
+        grid-row: 1 / span 3;
+        grid-column: 1 / span 1;
+      }
+
+      &:nth-child(2) {
+        grid-row: 4 / span 3;
+        grid-column: 1 / span 1;
+      }
+
+      &:nth-child(3) {
+        grid-row: 1 / span 6;
+        grid-column: 2 / span 1;
+      }
+
+      &:nth-child(4) {
+        grid-row: 1 / span 2;
+        grid-column: 3 / span 1;
+      }
+
+      &:nth-child(5) {
+        grid-row: 3 / span 2;
+        grid-column: 3 / span 1;
+      }
+
+      &:last-child {
+        grid-row: 5 /span 2;
+        grid-column: 3 / span 1;
+      }
+    }
+
+    &:first-child,
+    &:nth-child(2) {
+      .img-wrapper {
+        width: 16rem;
+        height: 16rem;
+      }
+    }
+
+    &:nth-child(3) {
+      .img-wrapper {
+        right: 50%;
+        width: 26rem;
+        height: 26rem;
+        transform: translateX(50%);
+      }
+    }
+
+    &:nth-child(4),
+    &:nth-child(5),
+    &:last-child {
+      .img-wrapper {
+        width: 11rem;
+        height: 11rem;
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 3px 10px rgb(0, 0, 0, 0.17);
+
+      .btn--outlined {
+        color: colors.$bg-primary;
+        background-color: transparent;
+        border: 2px solid colors.$bg-primary;
+      }
+
+      h3 {
+        letter-spacing: .06em;
+      }
+
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+/* -------- end of products ------ */
