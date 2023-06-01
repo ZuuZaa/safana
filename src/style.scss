@@ -677,13 +677,6 @@ img {
 
 .advantages {
 
-  &__container {
-    display: flex;
-    justify-content: center;
-    margin-inline: auto;
-    width: 90%;
-  }
-
   &__list {
     position: relative;
     display: flex;
@@ -694,22 +687,24 @@ img {
       content: "";
       position: absolute;
       top: (13.4rem / 2);
+      left: 10%;
       z-index: -1;
+      display: none;
       width: 80%;
       height: 2px;
       background-color: colors.$line;
-
-      @media screen and (max-width: media.$large) {
-        display: none;
-      }
 
       @media screen and (min-width: media.$large) {
         display: block;
       }
     }
+    @media screen and (min-width: media.$large) {
+      justify-content: space-between;
+    }
   }
 
   &__item {
+    flex-basis: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1098,10 +1093,6 @@ img {
     }
   }
 
-  &__title {
-    text-transform: uppercase;
-  }
-
   &__thumb {
     width: 100%;
     height: 100%;
@@ -1175,7 +1166,84 @@ img {
       font-size: 1.6rem;
     }
   }
+
+  .section-title {
+    margin-bottom: 1.07em;
+  }
 }
 
 
 /* -------- end of services ------ */
+
+/* -------------------------------------------
+              # REFERANCES 
+ -------------------------------------------- */
+.referances {
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .controllers {
+    display: flex;
+    align-items: center;
+  }
+
+  .more {
+    font-size: 1.6rem;
+    color: colors.$black;
+    opacity: .6;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .prev {
+    margin-inline: 1em;
+  }
+
+  .icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: colors.$bg-gray;
+
+    &:hover {
+      img {
+        opacity: 1;
+      }
+    }
+
+    img {
+      width: 1.5rem;
+      aspect-ratio: 1/1;
+      opacity: .6;
+      transition: opacity .3s;
+    }
+  }
+
+  &__scroller {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 2rem;
+    padding-block: 3rem;
+  }
+  .slide {
+    padding: 2rem;
+    width: 20%;
+    height: 12rem;
+    border-radius: 1.3rem;
+    border: 1px solid colors.$bg-gray;
+    img {
+      object-fit: cover;
+    }
+  }
+}
+
+/* -------- end of referances ------ */
