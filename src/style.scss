@@ -687,6 +687,7 @@ img {
       content: "";
       position: absolute;
       top: (13.4rem / 2);
+      right: 10%;
       left: 10%;
       z-index: -1;
       display: none;
@@ -698,6 +699,7 @@ img {
         display: block;
       }
     }
+
     @media screen and (min-width: media.$large) {
       justify-content: space-between;
     }
@@ -1070,13 +1072,13 @@ img {
               # SERVICES 
  -------------------------------------------- */
 
-
 .services {
 
   &__gallery {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    padding-block: 3rem 4.8rem;
 
     @media screen and (min-width:media.$tablet) {
       display: grid;
@@ -1166,10 +1168,6 @@ img {
       font-size: 1.6rem;
     }
   }
-
-  .section-title {
-    margin-bottom: 1.07em;
-  }
 }
 
 
@@ -1186,26 +1184,31 @@ img {
     align-items: center;
   }
 
-  .controllers {
-    display: flex;
-    align-items: center;
+  &__slider {
+    padding-top: 4rem;
   }
 
+  .owl-theme .owl-nav {
+    position: absolute;
+    top: -5.5rem;
+    right: 0;
+  }
+
+  .owl-theme .owl-nav [class*='owl-']:hover {
+    background: transparent;
+}
   .more {
     font-size: 1.6rem;
     color: colors.$black;
     opacity: .6;
+    margin-right: 12rem;
 
     &:hover {
       opacity: 1;
     }
   }
 
-  .prev {
-    margin-inline: 1em;
-  }
-
-  .icon-wrapper {
+  .control-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1228,20 +1231,21 @@ img {
     }
   }
 
-  &__scroller {
-    display: grid;
-    grid-auto-flow: column;
-    gap: 2rem;
-    padding-block: 3rem;
-  }
   .slide {
     padding: 2rem;
-    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25rem;
     height: 12rem;
     border-radius: 1.3rem;
     border: 1px solid colors.$bg-gray;
+    scroll-snap-align: start;
+    transition: transform .3s;
+
     img {
-      object-fit: cover;
+      inline-size: 100%;
+      object-fit: contain;
     }
   }
 }

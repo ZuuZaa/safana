@@ -93,3 +93,9 @@ h5 {
     font-size: 1.7rem;
     font-weight: 500;
 }
+
+.container {
+    @media screen and (min-width:media.$xl) {
+        max-width: 1320px;
+    }
+}

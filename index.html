@@ -12,10 +12,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+    integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <link rel="stylesheet" href="src/style.scss">
 
   <title>Safana Group</title>
-
 </head>
 
 <body>
@@ -214,6 +221,7 @@
             <div class="advantages__text">
               <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
             </div>
+          </li>
           <li class="advantages__item">
             <figure class="advantages__icon">
               <img src="/img/advantage-icon.png">
@@ -520,71 +528,198 @@
       </div>
     </section>
 
-    <section class="projects">
+    <!-- <section class="projects">
       <div class="container">
         <h3 class="section-title">Layihələr</h3>
       </div>
-    </section>
+    </section> -->
 
     <section class="referances">
 
       <div class="container">
         <div class="referances__header">
-          <h3 class="section-title">Tətəfdaşlar</h3>
+          <h3 class="section-title">Tərəfdaşlar</h3>
           <div class="controllers">
             <a href="#" class="more">Bütün üzvlərə bax</a>
-            <div class="buttons">
-              <button class="prev">
-                <figure class="icon-wrapper">
-                  <img src="/img/left.png" alt="to the left">
-                </figure>
-                <span class="sr-only">Previous</span>
-              </button>
-              <button class="next">
-                <figure class="icon-wrapper">
-                  <img src="/img/right.png" alt="to the right">
-                </figure>
-                <span class="sr-only">Next</span>
-              </button>
-            </div>
+            <figure class="control-btn prev">
+              <img src="/img/left.png" alt="previous">
+            </figure>
+            <figure class="control-btn next">
+              <img src="/img/right.png" alt="next">
+            </figure>
           </div>
         </div>
 
-        <div class="referances__scroller">
-          <figure class="slide">
-            <img src="/img/divacademy.png" alt="div academy">
+        <div class="referances__slider owl-carousel owl-theme">
+          <figure class="slide item">
+            <img src="/img/divacademy.png" alt="img" draggable="false" alt="div academy">
           </figure>
-          <figure class="slide">
-            <img src="/img/divacademy.png" alt="div academy">
+          <figure class="slide item">
+            <img src="/img/okmedia.png" alt="img" draggable="false" alt="div academy">
           </figure>
-          <figure class="slide">
-            <img src="/img/divacademy.png" alt="div academy">
+          <figure class="slide item">
+            <img src="/img/divacademy.png" alt="img" draggable="false" alt="div academy">
           </figure>
-          <figure class="slide">
-            <img src="/img/divacademy.png" alt="div academy">
+          <figure class="slide item">
+            <img src="/img/okmedia.png" alt="img" draggable="false" alt="div academy">
           </figure>
-          <figure class="slide">
-            <img src="/img/divacademy.png" alt="div academy">
+          <figure class="slide item">
+            <img src="/img/divacademy.png" alt="img" draggable="false" alt="div academy">
           </figure>
-          <figure class="slide">
-            <img src="/img/divacademy.png" alt="div academy">
+          <figure class="slide item">
+            <img src="/img/okmedia.png" alt="img" draggable="false" alt="div academy">
+          </figure>
+          <figure class="slide item">
+            <img src="/img/divacademy.png" alt="img" draggable="false" alt="div academy">
+          </figure>
+          <figure class="slide item">
+            <img src="/img/okmedia.png" alt="img" draggable="false" alt="div academy">
+          </figure>
+          <figure class="slide item">
+            <img src="/img/divacademy.png" alt="img" draggable="false" alt="div academy">
+          </figure>
+          <figure class="slide item">
+            <img src="/img/divacademy.png" alt="img" draggable="false" alt="div academy">
           </figure>
         </div>
       </div>
     </section>
   </main>
 
+  <footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
+    <section id="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <h5 class="foot-title">Assosiasiya</h5>
+            <ul class="foot-links">
+              <li><a href="/about/">Haqqımızda</a></li>
+              <li><a href="/mission/">Missiya və vizyon</a></li>
+              <li><a href="/organizationalstructure/">Təşkilati struktur</a></li>
+              <li><a href="/administrative/">İdarə heyəti</a></li>
+              <li><a href="/report/">Hesabatlar</a></li>
+              <li><a href="/partner/">Tərəfdaşlar</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h5 class="foot-title">Üzvlük</h5>
+            <ul class="foot-links">
+              <li><a href="/members/">Cari üzvlər</a></li>
+              <li><a href="">Online müraciət</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h5 class="foot-title">Son tədbirlər</h5>
+            <ul class="foot-links">
+              <li><a href="https://tehsil.panel.az/events/20-tedbir-5.html">tədbir 5</a></li>
+              <li><a href="https://tehsil.panel.az/events/19-tedbir-4.html">tədbir 4</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h5 class="foot-title">Son xəbərlər</h5>
+            <ul class="foot-links">
+              <li><a href="https://tehsil.panel.az/news/29-xeber-4.html">xəbər 4</a></li>
+              <li><a href="https://tehsil.panel.az/news/28-xeber-3.html">xəbər 3</a></li>
+              <li><a href="https://tehsil.panel.az/news/27-xeber-2.html">xəbər 2</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="footer-mid">
+      <div class="container">
+        <div class="row">
+          <div id="footer-logo" class="col-12 col-md-4">
+            <img src="/img/logo.png" alt="logo">
+          </div>
+          <div class="col-12 col-md-4" id="foot-social-links">
+            <a href="" target="_blank"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            <a href="" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="" target="_blank"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+          </div>
+          <div id="copyright" class="col-12 col-md-4">
+            <span>© Copyright 2022. Bütün hüquqları qorunur</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <ul>
+              <li><a href="">Baş səhifə</a></li>
+              <!--<li><a href="">Yeniliklər</a></li>-->
+              <li><a href="">Əlaqə</a></li>
+            </ul>
+          </div>
+          <div id="siteby" class="col-md-6">
+            <span>Veb saytın hazırlanması:</span>
+            <a href="https://okmedia.az/" target="_blank">
+              <img src="/img/okmedia.png" alt="OKmedia">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </footer>
+
+
+
+
+
+
+
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
     integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
     integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
     crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+    integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script type="module" src="/src/main.js"></script>
+
+  <script>
+    var owl = $('.owl-carousel');
+    owl.owlCarousel({
+      items: 4,
+      loop: true,
+      margin: 10,
+      autoplay: true,
+      autoplayTimeout: 1000,
+      autoplayHoverPause: true,
+      nav: true,
+      rewindNav: true,
+      // you can use jQuery selector
+      navText: [$('.control-btn.prev'), $('.control-btn.next')],
+
+      // navText: ["<img src='/img/left.png' alt='to the left'>","<img src='/img/right.png' alt='to the right'>"],
+      dots: false,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 3
+        },
+        1000: {
+          items: 5
+        }
+      }
+    })
+    owl.trigger('play.owl.autoplay', [1000])
+  </script>
 </body>
 
 </html>

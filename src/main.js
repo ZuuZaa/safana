@@ -1,8 +1,6 @@
 const header = document.querySelector('.header');
 const menuBtn = document.querySelector('.menu-btn');
-
 let scrollTopPosition = 0;
-
 
 // ---- header on scroll behavior ---------
 document.addEventListener("scroll", () => {
@@ -14,4 +12,4 @@ menuBtn.addEventListener("click", () => {
 });
 
 
-$('.carousel').carousel()
+
