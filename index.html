@@ -60,30 +60,28 @@
                   </li>
                 </ul>
               </div>
-              <div class="sosial-links">
-                <ul class="d-flex align-items-center">
-                  <li class="sosial-links__link">
-                    <a href="https://www.facebook.com" target="_blank">
-                      <i class="fab fa-facebook-f"></i>
-                    </a>
-                  </li>
-                  <li class="sosial-links__link">
-                    <a href="https://www.linkedin.com">
-                      <i class="fab fa-linkedin"></i>
-                    </a>
-                  </li>
-                  <li class="sosial-links__link">
-                    <a href="https://www.instagram.com" target="_blank">
-                      <i class="fab fa-instagram"></i>
-                    </a>
-                  </li>
-                  <li class="sosial-links__link">
-                    <a href="https://www.youtube.com" target="_blank">
-                      <i class="fa-brands fa-youtube"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+              <ul class="sosial-links">
+                <li class="sosial-links__link">
+                  <a href="https://www.facebook.com" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li class="sosial-links__link">
+                  <a href="https://www.linkedin.com">
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                </li>
+                <li class="sosial-links__link">
+                  <a href="https://www.instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </li>
+                <li class="sosial-links__link">
+                  <a href="https://www.youtube.com" target="_blank">
+                    <i class="fa-brands fa-youtube"></i>
+                  </a>
+                </li>
+              </ul>
             </div>
             <div class="header__nav d-flex align-items-center">
               <ul class="nav-links-list">
@@ -129,11 +127,12 @@
           </div>
         </div>
         <div class="menu-button-wrapper">
-          <button class="menu-btn">
+          <input type="checkbox" id="menu" class="menu-input">
+          <label for="menu" class="menu-btn">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
-          </button>
+          </label>
         </div>
       </div>
     </nav>
@@ -586,14 +585,56 @@
     </section>
   </main>
 
-  <footer>
-
-    <section id="footer-top">
+  <footer class="footer">
+    <section class="footer__top">
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
-            <h5 class="foot-title">Assosiasiya</h5>
-            <ul class="foot-links">
+          <div class="footer__contacts col-md-6 col-12">
+            <p class="footer__contacts-label text-default">Çağrı mərkəzi</p>
+            <a class="footer__contacts-link" href="tel:+0124366162">(012) 436 61 62</a>
+            <button class="btn">
+              <span class="btn-text">Biz sizə zəng edək?</span>
+            </button>
+          </div>
+          <div class="sosial-links col-md-6 col-12">
+                <ul  class="col-6">
+                  <li class="sosial-links__link">
+                    <a href="https://www.facebook.com" class="d-flex align-items-center" target="_blank">
+                      <i class="fab fa-facebook-f"></i>
+                      <span>facebook</span>
+                    </a>
+                  </li>
+                  <li class="sosial-links__link">
+                    <a href="https://www.linkedin.com" class="d-flex align-items-center" target="_blank" >
+                      <i class="fab fa-linkedin"></i>
+                      <span>linkedin</span>
+                    </a>
+                  </li>
+                </ul>
+                <ul class="col-6">
+                  <li class="sosial-links__link">
+                    <a href="https://www.instagram.com" class="d-flex align-items-center" target="_blank">
+                      <i class="fab fa-instagram"></i>
+                      <span>instagram</span>
+                    </a>
+                  </li>
+                  <li class="sosial-links__link">
+                    <a href="https://www.youtube.com" class="d-flex align-items-center" target="_blank">
+                      <i class="fa-brands fa-youtube"></i>
+                      <span>youtube</span>
+                    </a>
+                  </li>
+                </ul>
+            </div>
+        </div>
+      </div>
+    </section>
+    <section class="footer__links">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-12 mb-lg-0 mb-5">
+            <h5 class="footer__title">Assosiasiya</h5>
+            <ul class="footer__links-list">
               <li><a href="/about/">Haqqımızda</a></li>
               <li><a href="/mission/">Missiya və vizyon</a></li>
               <li><a href="/organizationalstructure/">Təşkilati struktur</a></li>
@@ -602,77 +643,59 @@
               <li><a href="/partner/">Tərəfdaşlar</a></li>
             </ul>
           </div>
-          <div class="col-md-3">
-            <h5 class="foot-title">Üzvlük</h5>
-            <ul class="foot-links">
+          <div class="col-lg-3 col-md-6 col-12 mb-lg-0 mb-3">
+            <h5 class="footer__title">Üzvlük</h5>
+            <ul class="footer__links-list">
               <li><a href="/members/">Cari üzvlər</a></li>
               <li><a href="">Online müraciət</a></li>
             </ul>
           </div>
-          <div class="col-md-3">
-            <h5 class="foot-title">Son tədbirlər</h5>
-            <ul class="foot-links">
+          <div class="col-lg-3 col-md-6 col-12 mb-lg-0 mb-5">
+            <h5 class="footer__title">Son tədbirlər</h5>
+            <ul class="footer__links-list">
               <li><a href="https://tehsil.panel.az/events/20-tedbir-5.html">tədbir 5</a></li>
               <li><a href="https://tehsil.panel.az/events/19-tedbir-4.html">tədbir 4</a></li>
             </ul>
           </div>
-          <div class="col-md-3">
-            <h5 class="foot-title">Son xəbərlər</h5>
-            <ul class="foot-links">
+          <div class="col-lg-3 col-md-6 col-12 mb-lg-0 mb-5">
+            <h5 class="footer__title">Son xəbərlər</h5>
+            <ul class="footer__links">
               <li><a href="https://tehsil.panel.az/news/29-xeber-4.html">xəbər 4</a></li>
               <li><a href="https://tehsil.panel.az/news/28-xeber-3.html">xəbər 3</a></li>
               <li><a href="https://tehsil.panel.az/news/27-xeber-2.html">xəbər 2</a></li>
             </ul>
           </div>
-
         </div>
-      </div>
-    </section>
-
-    <section id="footer-mid">
-      <div class="container">
-        <div class="row">
-          <div id="footer-logo" class="col-12 col-md-4">
-            <img src="/img/logo.png" alt="logo">
+        <div class="footer__extra">
+          <div class="row align-items-center">
+            <figure class="footer__logo-wrapper  col-md-6 col-12">
+              <img src="/img/logo.png" alt="logo">
+            </figure>
+            <div class="col-md-6 col-12">
+              <ul class="d-flex justify-content-md-end justify-content-start">
+                <li class="mr-5"><a href="#">Baş səhifə</a></li>
+                <!--<li><a href="">Yeniliklər</a></li>-->
+                <li><a href="#">Əlaqə</a></li>
+              </ul>
+            </div>
           </div>
-          <div class="col-12 col-md-4" id="foot-social-links">
-            <a href="" target="_blank"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-            <a href="" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-            <a href="" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-            <a href="" target="_blank"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-          </div>
-          <div id="copyright" class="col-12 col-md-4">
-            <span>© Copyright 2022. Bütün hüquqları qorunur</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="footer-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <ul>
-              <li><a href="">Baş səhifə</a></li>
-              <!--<li><a href="">Yeniliklər</a></li>-->
-              <li><a href="">Əlaqə</a></li>
-            </ul>
-          </div>
-          <div id="siteby" class="col-md-6">
-            <span>Veb saytın hazırlanması:</span>
-            <a href="https://okmedia.az/" target="_blank">
-              <img src="/img/okmedia.png" alt="OKmedia">
-            </a>
+          <div class="row align-items-center ">
+            <div class="copyright col-md-6 col-12 d-flex">
+              <p class="mb-0 my-lg-0 my-5"> &copy; Copyright 2022. Bütün hüquqları qorunur</p>
+            </div>
+            <div class="col-md-6 col-12 d-flex  align-items-center  justify-content-md-end justify-content-start">
+              <p class="mb-0 mr-3">Veb saytın hazırlanması:</p>
+              <figure class="okmedia-logo">
+                <a class="logo" href="https://okmedia.az/" target="_blank">
+                  <img src="/img/okmedia.png" alt="OKmedia">
+                </a>
+              </figure>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </footer>
-
-
-
-
 
 
 
@@ -690,36 +713,6 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script type="module" src="/src/main.js"></script>
 
-  <script>
-    var owl = $('.owl-carousel');
-    owl.owlCarousel({
-      items: 4,
-      loop: true,
-      margin: 10,
-      autoplay: true,
-      autoplayTimeout: 1000,
-      autoplayHoverPause: true,
-      nav: true,
-      rewindNav: true,
-      // you can use jQuery selector
-      navText: [$('.control-btn.prev'), $('.control-btn.next')],
-
-      // navText: ["<img src='/img/left.png' alt='to the left'>","<img src='/img/right.png' alt='to the right'>"],
-      dots: false,
-      responsive: {
-        0: {
-          items: 1
-        },
-        600: {
-          items: 3
-        },
-        1000: {
-          items: 5
-        }
-      }
-    })
-    owl.trigger('play.owl.autoplay', [1000])
-  </script>
 </body>
 
 </html>

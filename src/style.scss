@@ -66,7 +66,7 @@
   }
 }
 
-body:has(.collapsed-nav) {
+body:has(.menu-input:checked) {
   overflow-y: hidden
 }
 
@@ -123,6 +123,18 @@ img {
   }
 }
 
+.sosial-links {
+  display: flex;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    padding: .45em;
+    height: 3.92rem;
+    transition: all 0.4s;
+  }
+}
+
 /* -------------------------------------------
               # HEADER 
  -------------------------------------------- */
@@ -132,14 +144,15 @@ img {
 
   @media screen and (max-width:media.$header-mobile) {
 
-    &:is(.collapsed-nav) {
+
+    &:has(.menu-input:checked) {
 
       .header__navbar {
         background-color: colors.$white;
       }
 
       .menu-btn {
-        transition: opacity 0.5s;
+        transition: opacity 0.4s;
 
         &:hover {
           opacity: 0.7;
@@ -209,7 +222,11 @@ img {
 
       .sosial-links__link {
         color: colors.$black;
-        opacity: 0.6;
+        opacity: 0.7;
+
+        &:hover {
+          opacity: 0.5;
+        }
       }
 
 
@@ -236,7 +253,7 @@ img {
 
         &__link,
         &__link--active {
-          transition: transform 0.5s;
+          transition: transform .4s;
 
           &:hover {
             transform: scale(1.1);
@@ -252,17 +269,27 @@ img {
       margin-left: 2em;
     }
 
+    &:is(.onscroll) {
+      .sosial-links {
+        display: none;
+      }
+
+      .nav-collapse {
+        flex-direction: row;
+      }
+    }
+
+    &:not(.onscroll) {
+      .sosial-links {
+        color: colors.$white;
+        a:hover {
+          color: color.adjust(colors.$white, $lightness: -20, $alpha: 0.8);
+        }
+      }
+    }
   }
 
   &:is(.onscroll) {
-
-    .sosial-links {
-      display: none;
-    }
-
-    .nav-collapse {
-      flex-direction: row;
-    }
 
     .nav-container {
       flex-direction: row;
@@ -278,10 +305,6 @@ img {
   }
 
   &:not(.onscroll) {
-
-    .sosial-links {
-      display: flex;
-    }
 
     .nav-container {
       flex-direction: column;
@@ -304,7 +327,7 @@ img {
     z-index: 15;
     width: 100%;
     color: transparent;
-    transition: all .5s;
+    transition: all .4s;
 
     .onscroll & {
       background-color: colors.$white;
@@ -343,7 +366,7 @@ img {
       height: 100vh;
       visibility: hidden;
       background-color: colors.$cover;
-      transition: visibility 0.3s;
+      transition: visibility 0.4s;
     }
 
     @media screen and (min-width:media.$header-mobile) {
@@ -358,7 +381,7 @@ img {
     flex-direction: column;
     gap: .8rem;
     height: 100%;
-    transition: transform 0.5s;
+    transition: transform 0.4s;
 
     @media screen and (max-width:media.$header-mobile) {
       background: colors.$white;
@@ -417,7 +440,7 @@ img {
       border-radius: 5rem;
       overflow-x: hidden;
       background: colors.$white;
-      transition: width 1s;
+      transition: width .4s;
       animation: languagesMouseLeave 0.8s;
 
 
@@ -446,28 +469,6 @@ img {
 
   .sosial-links {
     font-size: 2.2rem;
-
-    &__link {
-      display: flex;
-      align-items: center;
-      padding: .45em;
-      height: 3.92rem;
-      color: colors.$white;
-      transition: color 0.8s;
-
-      &:hover {
-        color: color.adjust(colors.$white, $lightness: -20, $alpha: 0.8);
-      }
-    }
-
-    @media screen and (max-width:media.$header-mobile) {
-      display: none;
-    }
-
-    @media screen and (min-width:media.$header-mobile) {
-      display: flex;
-    }
-
   }
 
   &__nav-link {
@@ -494,15 +495,15 @@ img {
       width: 0;
       height: 2px;
       background: colors.$safana;
-      transition: width 0.3s;
-      animation: navLinkBorderless 0.3s;
+      transition: width 0.4s;
+      animation: navLinkBorderless 0.4s;
     }
 
     &:hover {
       &::after {
         right: 0;
         width: 100%;
-        animation: navLinkHover 0.3s;
+        animation: navLinkHover 0.4s;
       }
     }
   }
@@ -537,6 +538,10 @@ img {
     justify-content: center;
     align-items: center;
 
+    .menu-input {
+      appearance: none;
+    }
+
     .menu-btn {
       display: flex;
       flex-direction: column;
@@ -551,7 +556,7 @@ img {
       width: 100%;
       height: 0.2rem;
       opacity: 1;
-      transition: all 0.5s;
+      transition: all .4s;
 
       &:last-child {
         width: 70%;
@@ -841,7 +846,7 @@ img {
     text-align: center;
     color: colors.$black;
     background-color: colors.$white;
-    transition: transform 0.3s;
+    transition: transform .4s;
 
     &:hover {
       transform: translateY(-10%);
@@ -1098,7 +1103,7 @@ img {
   &__thumb {
     width: 100%;
     height: 100%;
-    transition: transform .3s;
+    transition: transform .4s;
 
     &::after {
       content: "";
@@ -1109,7 +1114,7 @@ img {
       left: 0;
       z-index: 1;
       background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1));
-      transition: background .3s;
+      transition: background .4s;
     }
   }
 
@@ -1152,7 +1157,7 @@ img {
     padding-inline: 2.3em;
     color: colors.$white;
     transform: translateY(5rem);
-    transition: transform .3s;
+    transition: transform .4s;
 
     p {
       display: -webkit-box;
@@ -1196,7 +1201,8 @@ img {
 
   .owl-theme .owl-nav [class*='owl-']:hover {
     background: transparent;
-}
+  }
+
   .more {
     font-size: 1.6rem;
     color: colors.$black;
@@ -1227,7 +1233,7 @@ img {
       width: 1.5rem;
       aspect-ratio: 1/1;
       opacity: .6;
-      transition: opacity .3s;
+      transition: opacity .4s;
     }
   }
 
@@ -1236,12 +1242,11 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 25rem;
     height: 12rem;
     border-radius: 1.3rem;
     border: 1px solid colors.$bg-gray;
     scroll-snap-align: start;
-    transition: transform .3s;
+    transition: transform .4s;
 
     img {
       inline-size: 100%;
@@ -1251,3 +1256,66 @@ img {
 }
 
 /* -------- end of referances ------ */
+
+/* -------------------------------------------
+              # FOOTER 
+ -------------------------------------------- */
+.footer {
+  background-color: colors.$bg-primary;
+  color: colors.$light;
+
+  a:not(.logo) {
+    opacity: 0.7;
+    transition: opacity .4s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__logo-wrapper {
+    padding-inline: 0;
+
+    img {
+      inline-size: 24rem;
+      aspect-ratio: 16/6;
+      object-fit: cover;
+    }
+  }
+
+  &__top {
+    background-color: colors.$bg-secondary;
+  }
+
+  &__links a {
+    font-size: 1.4rem;
+    line-height: 1.8;
+  }
+
+  .sosial-links {
+    gap: 2rem;
+    font-size: 2.4rem;
+
+    &__link {
+      span {
+        font-size: 1.4rem;
+        margin-left: 1em;
+      }
+      &:hover  span{
+        border-bottom: 1px solid colors.$light;
+      }
+    }
+  }
+
+  .okmedia-logo {
+    width: 8.2rem;
+
+    img {
+      inline-size: 100%;
+      aspect-ratio: 16/6;
+      object-fit: contain;
+    }
+  }
+}
+
+/* -------- end of footer ------ */
