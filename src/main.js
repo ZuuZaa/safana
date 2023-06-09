@@ -32,6 +32,6 @@ owl.owlCarousel({
     }
   }
 })
-owl.trigger('play.owl.autoplay', [1000])
+owl.trigger('play.owl.autoplay', [3000])
 
 

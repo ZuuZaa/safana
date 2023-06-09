@@ -117,3 +117,209 @@
 </body>
 
 </html>
+
+
+
+ <!-- [not-available=main|cat]
+  {info}{content}
+  [/not-available]
+  [available=cat]
+  <section class="cat-page">
+    <div class="head">
+      <div class="container head-cont">
+        <div class="row">
+          <div class="col-8">
+            <h1 class="head-title">
+              {category-title}
+            </h1>
+            <div class="head-buttons">
+              <a href="" class="head-button1">Ətraflı</a>
+              <a href="/geleceyi-yaz/?utm=breadcrumbbutton&sehife=<?php echo (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "
+                https" : "http" ) . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]" ; ?>" class="head-button2"
+                title="proqramlasdirma kursu qeydiyyat">İndi qeydiyyatdan keç</a>
+            </div>
+          </div>
+          <div class="static-head-img">
+            <div class="circle">
+              <img src="{icon}">
+            </div>
+            <div class="static-head-rect"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="container">
+        <div class="row">
+          {info}{content}
+        </div>
+      </div>
+    </div>
+  </section>
+  [/available] -->
+
+
+  <!-- [available=search]
+  [/available]
+
+  [available=search] // bunu ona görə yazdım ki, əsas səhifələrdə source koda baxarkən commentə alınmış kodlarım
+  görünməsin.
+  [/available] -->
+
+
+  <!-- [available=main|static]
+  [not-static=geleceyi-yaz,about-career-center,partners,social-responsibility,mission-vision,academy]
+  <section id="calculator">
+    <div class="container">
+      <div class="container-calc">
+        <div class="row">
+          <div class="col-lg-6 pr-lg-0">
+            <div class="col-left">
+              <h2>Gələcək maaşını hesabla
+                <img width="46" height="46" src="/img/emoji.png" alt="proqramlasdirma kursu">
+              </h2>
+             
+            </div>
+          </div>
+          <div class="col-lg-6 pl-lg-0">
+            <div class="col-right">
+              <div class="col-right-header">
+                <h5>Ortalama maaşın <img width="24" height="24" src="/img/rocket.png" alt="proqramci olmaq"></h5>
+                <h2 class="d-flex align-items-center"><span class="avg-salary"></span> <i class="manat">M</i></h2>
+              </div>
+              <div class="col-right-prices">
+  
+                <div class="col-right-price investisiya">
+                  <p>İnvestisiyanın geri dönüş müddəti</p>
+                  <h3><span class="geridonus"></span> ay</h3>
+                </div>
+                <div class="col-right-price">
+                  <p>Gələcək vəzifən</p>
+                  <h3 class='future-position'>
+                    <span class="back-positions d-none">Backend developer, Web developer, Full-stack developer, Software
+                      developer, Software engineer, CTO, IT director, IT project manager</span>
+                    <span class="front-positions d-none">Frontend developer, Software developer, Software engineer,
+                      Mobile FrontEnd Developer, Web developer, UI/UX developer, IT project manager</span>
+                    <span class="reqemsal-positions d-none">Head of Marketing, Rəqəmsal marketinq mütəxəssisi, SMM
+                      mütəxəssisi, Marketinq direktoru, Sahibkar</span>
+                  </h3>
+                </div>
+                <div class="col-right-price">
+                  <p>Xarici şirkətlərdən iş təklifi alma ehtimalın</p>
+                  <h3 class="xaricdeis">%</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  [/not-static]
+  [/available] -->
+
+
+
+  <!-- [available=main]
+  <section id="blog">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="text-center">Blog</h2>
+        </div>
+        {custom category="1" limit="8" template="shortstory"}
+      </div>
+    </div>
+  </section>
+  <section id="social-liability">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="text-center title">Sosial məsuliyyət<p class="bacararsan">#bacararsan</p>
+          </h2>
+        </div>
+      </div>
+      <div class="img-content">
+        <div class="social-lia-img-slider">
+          <a href="/social-responsibility/" title="sosial məsuliyyət">
+            <div class="social-lia-carousel owl-carousel">
+              <div class="item">
+                <img src="/img/bacararsan-baliq-vermirik.png" alt="proqramlasdirma akademiyasi">
+              </div>
+              <div class="item">
+                <img src="/img/bacararsan-freelance.png" alt="proqramlasdirma akademiyasi">
+              </div>
+              <div class="item">
+                <img src="/img/bacararsan-spikerler-destek-verdi.png" alt="proqramlasdirma akademiyasi">
+              </div>
+              <div class="item">
+                <img src="/img/bacararsan-suallari-cavabladiq.png" alt="proqramlasdirma akademiyasi">
+              </div>
+            </div>
+          </a>
+          <img src="/img/social-lia.png?=jk" class="center-img" alt="proqramlasdirma kurslari bakida">
+        </div>
+        <div class="left-top-side">
+          <div class="left-top-side-text" data-aos="fade-zoom-in">
+            <h2>Freelance işi öyrədirik</h2>
+            <p>Məkan, fiziki güc asılılığını ortadan qaldıran ən müasir iş modelini öyrədirik</p>
+          </div>
+          <div class="line1-back w-fade" data-aos="fade-up"></div>
+        </div>
+        <div class="left-bottom-side">
+          <div class="left-top-side-text" data-aos="fade-zoom-in">
+            <h2>Peşəkar spikerlər dəvət edirik</h2>
+            <p>Sahənin tanınmış ekspertlərini onlara dəstək üçün səfərbər edirik</p>
+          </div>
+          <div class="line2-back w-fade" data-aos="fade-up"></div>
+        </div>
+        <div class="right-top-side">
+          <div class="left-top-side-text top-right-text" data-aos="fade-zoom-in">
+            <h2>Düzgün istiqamət veririk</h2>
+            <p>Fiziki məhdudiyyətli gənclərin proqramlaşdırma ilə bağlı suallarını cavabladıq</p>
+          </div>
+          <div class="line3-back w-fade" data-aos="fade-up"></div>
+        </div>
+        <div class="right-bottom-side">
+          <div class="left-top-side-text bottom-right-text" data-aos="fade-zoom-in">
+            <h2>"Balıq tutmağı" öyrədirik</h2>
+            <p>Öz ayaqları üstündə durması üçün onlara "balıq vermirik, balıq tutmağı öyrədirik"</p>
+          </div>
+          <div class="line4-back w-fade" data-aos="fade-up"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  [/available] -->
+
+
+
+  <!-- [not-static=geleceyi-yaz]
+  [not-available=feedback]
+  <section id="call-to-action">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="call-to-action-content">
+            <h2 class="title">İlk addımı at</h2>
+            <a href="" class="call-toaction-button" data-toggle="collapse" data-target="#collapseExample"
+              aria-expanded="true" aria-controls="collapseExample" title="proqramlaşdırma kursları qiymətləri">İndi
+              başla</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="first-step">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="collapse" id="collapseExample" aria-expanded="false">
+            {include file="/conn/online-registration.php"}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  [/not-available]
+  [/not-static] -->
