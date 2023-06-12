@@ -1,6 +1,11 @@
 @use 'src/colors' as color;
 @use 'src/media' as media;
 
+@font-face {
+    font-family: "FTN";
+    src: url(fonts/FTN55.woff);
+}
+
 *,
 ::after,
 ::before {
@@ -8,6 +13,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+
 
 html {
     @media screen and (max-width:media.$tablet) {
@@ -19,9 +27,11 @@ html {
     }
 
     font-size: 62.5%;
+
 }
 
 body {
+    font-family: 'FTN', sans-serif;
     overflow-x: hidden;
     background: color.$white;
     color: color.$text-primary;
